@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:vm="clr-namespace:HackathonExample.ViewModel"
+    xmlns:root="clr-namespace:HackathonExample"
+    x:DataType="vm:RemoteViewModel"
+    xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+    BackgroundColor="Black"
+    ios:Page.UseSafeArea="true"
+    x:Class="HackathonExample.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="BorderColor">White</Color>
+        <Color x:Key="FontColor">White</Color>
+        <Color x:Key="BackgroundColor">Black</Color>
+        <x:Double x:Key="FontSize">60</x:Double>
+
+        <Style TargetType="Entry">
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="PlaceholderColor" Value="White" />            
+        </Style>
+    </ContentPage.Resources>
+
+    <Grid Padding="10, 10, 10, 20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="60*" />
+            <RowDefinition Height="20*" />
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Text="HACK-A-THON 20" HorizontalTextAlignment="Center" FontSize="Title" TextColor="White" />
+
+        <StackLayout Grid.Row="1" Orientation="Horizontal">
+            <Entry Keyboard="Text" HorizontalOptions="FillAndExpand" Placeholder="IP Address" Text="{Binding IpAddress}" />
+            <Entry Keyboard="Numeric" HorizontalOptions="FillAndExpand" Placeholder="Port" Text="{Binding Port}" />
+        </StackLayout>
+
+        <Grid Grid.Row="2" Margin="20, 30, 20, 20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Button Text="{x:Static root:IconFont.ArrowUp}" FontFamily="{d:StaticResource MaterialFontFamily}"
+                    Command="{Binding MoveUpCommand}"
+                    FontSize="{StaticResource FontSize}"
+                    BorderColor="{StaticResource BorderColor}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource FontColor}"
+                    BorderWidth="1"
+                    Grid.Row="0" Grid.Column="1" />
+
+            <Button Text="{x:Static root:IconFont.ArrowLeft}" FontFamily="{d:StaticResource MaterialFontFamily}"
+                    Command="{Binding MoveLeftCommand}"
+                    FontSize="{StaticResource FontSize}"
+                    BorderColor="{StaticResource BorderColor}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource FontColor}"
+                    BorderWidth="1"
+                    Grid.Row="1"
+                    Grid.Column="0" />
+
+            <Button Text="{x:Static root:IconFont.ArrowRight}" FontFamily="{d:StaticResource MaterialFontFamily}"
+                    Command="{Binding MoveRightCommand}"
+                    FontSize="{StaticResource FontSize}"
+                    BorderColor="{StaticResource BorderColor}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource FontColor}"
+                    BorderWidth="1"
+                    Grid.Row="1"
+                    Grid.Column="2" />
+
+            <Button 
+                    Text="{x:Static root:IconFont.ArrowDown}" FontFamily="{d:StaticResource MaterialFontFamily}"
+                    Command="{Binding MoveDownCommand}"
+                    FontSize="{StaticResource FontSize}"
+                    BorderColor="{StaticResource BorderColor}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource FontColor}"
+                    BorderWidth="1"
+                    Grid.Row="2" Grid.Column="1" />
+        </Grid>
+
+    </Grid>    
+</ContentPage>
