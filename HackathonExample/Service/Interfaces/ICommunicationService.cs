@@ -13,5 +13,7 @@ namespace HackathonExample.Service.Interfaces
         Task MoveLeftAsync();
 
         Task MoveRightAsync();
+
+        Task StopAsync();
     }
 }

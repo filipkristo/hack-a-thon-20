@@ -29,6 +29,8 @@ namespace HackathonExample.Service
 
         public Task MoveUpAsync() => SendUdpCommandAsync(Command.Up);
 
+        public Task StopAsync() => SendUdpCommandAsync(Command.Stop);
+
         private async Task SendUdpCommandAsync(string command)
         {
             using var client = new UdpClient(_ipAddress, _port);

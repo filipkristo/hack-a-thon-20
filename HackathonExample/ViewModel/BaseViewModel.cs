@@ -120,9 +120,7 @@ namespace HackathonExample.ViewModel
 
                 return true;
             }
-        }
-
-        public virtual Task InitializeAsync(object navigationData) => Task.CompletedTask;
+        }        
 
         public virtual Task OnAppearing() => Task.CompletedTask;
 

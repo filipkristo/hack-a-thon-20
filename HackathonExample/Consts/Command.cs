@@ -5,6 +5,8 @@ namespace HackathonExample.Consts
     {
         public const string Up = "Up";
 
+        public const string Stop = "Stop";
+
         public const string Down = "Down";
 
         public const string Left = "Left";

@@ -71,6 +71,16 @@
                     Grid.Row="1"
                     Grid.Column="0" />
 
+            <Button Text="{x:Static root:IconFont.Stop}" FontFamily="{d:StaticResource MaterialFontFamily}"
+                    Command="{Binding StopCommand}"
+                    FontSize="{StaticResource FontSize}"
+                    BorderColor="{StaticResource BorderColor}"
+                    BackgroundColor="{StaticResource BackgroundColor}"
+                    TextColor="{StaticResource FontColor}"
+                    BorderWidth="1"
+                    Grid.Row="1"
+                    Grid.Column="1" />
+
             <Button Text="{x:Static root:IconFont.ArrowRight}" FontFamily="{d:StaticResource MaterialFontFamily}"
                     Command="{Binding MoveRightCommand}"
                     FontSize="{StaticResource FontSize}"
